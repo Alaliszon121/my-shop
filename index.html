@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com">
+    <link href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap">
+
+    <script src="scripts.js" type="text/javascript"></script>
+
+    <title>Sklep z ubraniami</title>
+</head>
+
+<body>
+    <header>
+        <p id="header1">SKLEP Z UBRANIAMI</p>
+        <p id="header2">SKLEP Z UBRANIAMI</p>
+    </header>
+    <nav>
+        <ul id="nav-ul">
+            <li class="nav-li"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-li"><a class="nav-link" href="items.php">Sklep</a></li>
+            <li class="nav-li"><a class="nav-link" href="#">Podstrona</a></li>
+            <li style="float: right; margin-right: 2rem; padding: 1rem;">
+                <form method="post" action="items.php"><input type="text" placeholder="nazwa ubrania" name="nazwaU">
+                    <input type="submit" name="submit" value="Wyszukaj">
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+        <form method="post" action="items.php" id="find_items">
+            <p>
+                Podaj nazwę ubrania:
+                <input type="text" placeholder="nazwa ubrania" name="nazwaU">
+            </p> <br>
+            <div style="overflow-x:auto;">
+                <details>
+                    <summary>Kategoria</summary>
+                    <label name="kategoria">
+                        <input type="checkbox" name="checkKat[]" id="swetry_kardigany" value="swetry_kardigany">
+                        swetry i kardigany <br>
+                        <input type="checkbox" name="checkKat[]" id="bluzy" value="bluzy"> bluzy <br>
+                        <input type="checkbox" name="checkKat[]" id="odziez_wierzchnia" value="odziez_wierzchnia">
+                        odzież wierzchnia <br>
+                        <input type="checkbox" name="checkKat[]" id="tshirty" value="tshirty"> tshirty <br>
+                        <input type="checkbox" name="checkKat[]" id="bluzki" value="bluzki"> bluzki <br>
+                        <input type="checkbox" name="checkKat[]" id="sukienki" value="sukienki"> sukienki <br>
+                        <input type="checkbox" name="checkKat[]" id="kombinezony" value="kombinezony">
+                        kombinezony dwuczęściowe <br>
+                        <input type="checkbox" name="checkKat[]" id="dol_stroju" value="dol_stroju"> dół stroju
+                        <br>
+                    </label>
+                </details>
+                <details>
+                    <summary>Kolor </summary>
+                    <label name="kolor">
+                        <input type="checkbox" name="checkKolor[]" id="czarny" value="czarny"> czarny <br>
+                        <input type="checkbox" name="checkKolor[]" id="bialy" value="bialy"> biały <br>
+                        <input type="checkbox" name="checkKolor[]" id="szary" value="szary"> szary <br>
+                        <input type="checkbox" name="checkKolor[]" id="czerwony" value="czerwony"> czerwony <br>
+                        <input type="checkbox" name="checkKolor[]" id="pomaranczowy" value="pomaranczowy"> pomarańczowy <br>
+                        <input type="checkbox" name="checkKolor[]" id="zolty" value="zolty"> żółty <br>
+                        <input type="checkbox" name="checkKolor[]" id="zielony" value="zielony"> zielony <br>
+                        <input type="checkbox" name="checkKolor[]" id="blekitny" value="blekitny"> błękitny <br>
+                        <input type="checkbox" name="checkKolor[]" id="fioletowy" value="fioletowy"> fioletowy <br>
+                        <input type="checkbox" name="checkKolor[]" id="granatowy" value="granatowy"> granatowy <br>
+                        <input type="checkbox" name="checkKolor[]" id="brazowy" value="brazowy"> brązowy <br>
+                        <input type="checkbox" name="checkKolor[]" id="bezowy" value="bezowy"> beżowy <br>
+                        <input type="checkbox" name="checkKolor[]" id="rozowy" value="rozowy"> różowy <br>
+                    </label>
+                </details>
+                <details>
+                    <summary>Typ materiału </summary>
+                    <label name="material">
+                        <input type="checkbox" name="checkMat[]" id="bawelna" value="bawelna"> bawełna <br>
+                        <input type="checkbox" name="checkMat[]" id="wiskoza" value="wiskoza"> wiskoza <br>
+                        <input type="checkbox" name="checkMat[]" id="dzins" value="dzins"> dżins <br>
+                        <input type="checkbox" name="checkMat[]" id="elastan" value="elastan"> elastan <br>
+                        <input type="checkbox" name="checkMat[]" id="poliester" value="poliester"> poliester
+                        <br>
+                        <input type="checkbox" name="checkMat[]" id="mieszane" value="mieszane"> mieszane <br>
+                    </label>
+                </details>
+
+            </div> <br>
+            <label name="sortuj">
+                <input type="radio" name="sortowanie" id="odniskiej" value="ASC"> Od ceny najniższej do najwyższej <br>
+                <input type="radio" name="sortowanie" id="odwysokiej" value="DESC"> Od ceny najwyższej do najniższej
+            </label> <br><br>
+            <p id="valueU">
+                Cena do: <a id="value">150 zł</a>
+                <input type="range" id="cena" name="cena" min="20" max="150" value="150" onchange="showValue()">
+            </p>
+            <input type="submit" name="submit" value="Wyszukaj" id="submit">
+        </form>
+    </aside>
+    <main id="content">
+        <br>
+
+        <article>
+            <h2>Trendy</h2>
+            <p style="font-style: italic;">
+                Miłośnicy mody, pokazujemy wam najnowsze trendy.
+            </p>
+            <img src="images/boots_1.png"
+                style="float: left; width: 15%; margin: 1rem; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);"><img
+                src="images/boots_2.png"
+                style="float: right; width: 10%; margin: 1rem; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);">
+            <h3>Trend na teraz: Masywne kozaki noszone na gołą nogę</h3>
+
+            <p>
+                Żegnajcie sandały, witajcie botki i kozaki. W tym sezonie im bardziej masywne, tym lepiej. Mogą mieć
+                fason kaloszy, jeździeckich oficerek albo być awangardową wariacją na temat klasyki. W najmodniejszym
+                wydaniu nosimy je z ultra krótką spódniczką i spodenkami, balansując tym samym na granicy lata i
+                jesieni.
+            </p><br>
+            <p>
+                Dua Lipa była jedną z pierwszych gwiazd, które pokusiły się o własną interpretację tego trendu. Pod
+                koniec sierpnia świętowała urodziny w sztywnej sukience o fasonie marynarki od Maximiliana Davisa i
+                wysokich kozakach z kolekcji Dora Teymur. Na podobne zestawienie zdecydowała się Bella Hadid – modelka,
+                a prywatnie siostra chłopaka Duy, Anwara. Młodsza z sióstr Hadid wiązane kozaki na masywnej podeszwie
+                połączyła z kraciastą sukienką vintage i modnym paskiem z łańcuchów.
+            </p><br>
+            <p>
+                Kozaki i krótka spódniczka (lub sukienka) to zresztą idealne rozwiązanie na wrześniową pogodę, gdy
+                jesień coraz częściej daje o sobie znać, ale lato nie składa jeszcze broni. Duet ten nawiązuje też do
+                trendu Y2K – w inspirowanym modą z lat 2000. wydaniu noszą go chociażby Kendall Jenner i modelka Edie
+                Campbell.
+            </p><br>
+            <p>
+                Kto woli inspirację z wybiegów, ten powinien zajrzeć do relacji z pokazów Coperni oraz Bottegi Venety.
+                Młoda francuska marka, która zasłynęła z kozaków z szeroką cholewką i na geometrycznym obcasie, w tym
+                sezonie proponuje model za kolano i zachęca, by nosić go w wieczorowym wydaniu, z prześwitującą sukienką
+                mini. Z kolei Daniel Lee w domu mody Bottega Veneta prezentuje nowe wersje „gumiaków” i eksperymentuje z
+                grubością podeszwy.
+            </p>
+        </article><br>
+        <article style="margin-top: 10vh;">
+            <img src="images/watch_2.png"
+                style="float: left; width: 20%; margin: 1rem; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);"><img
+                src="images/watch_1.png"
+                style="float: right; width: 15%; margin: 1rem; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);">
+            <h3>Księżyc na nadgarstku</h3>
+            <p>
+                Zegarki z linii The Longines Master Collection łączą elegancki design z poręczną funkcjonalnością.
+                Wyróżnia je również wskaźnik faz Księżyca. To idealny prezent dla miłośniczek astrologii.
+            </p><br>
+            <p>
+                Jesień to idealny czas na odświeżenie garderoby. W tym sezonie, obok klasycznych brązów i beży, królować
+                będą kolory, znów będziemy nosić dzianiny, do łask powrócą też zwierzęce printy. Wybierając dodatki,
+                warto postawić na wyraziste akcesoria, które posłużą nam latami. Jednym z ponadczasowych dodatków, w
+                które warto zainwestować, są zegarki, np. te od Longines. Szwajcarska marka, której historia sięga XIX
+                w., ceniona jest za umiejętny mariaż eleganckiego designu i funkcjonalności.
+            </p><br>
+            <p>
+                Jedną z najbardziej unikatowych kolekcji w dorobku marki jest The Longines Master Collection. To linia,
+                która wraca do podstaw sztuki zegarmistrzowskiej – wszystkie czasomierze są wyposażone w tradycyjne
+                mechanizmy, zamknięte w eleganckiej oprawie. Projektanci marki zadbali oczywiście o wiele niezbędnych
+                funkcji – zegarek nie tylko wskazuje godzinę, ale jest również wyposażony w datownik, chronograf, pełen
+                kalendarz i wskaźnik, który przypomni o konieczności ponownego nakręcenia zegarka.
+            </p><br>
+            <p>
+                Tym, co wyróżnia zegarki The Longines Master Collection, jest też wskaźnik faz Księżyca, od teraz
+                dostępny również w linii dla kobiet. Kolekcja wpisuje się w renesans astrologii i fascynacji rytmem
+                natury. Idea cykliczności to również niezmienne inspiracje projektantów marki spod znaku uskrzydlonej
+                klepsydry. Wzbogacenie modelu o księżycowy wskaźnik na 34-milimetrowej kopercie wymagało od
+                zegarmistrzów marki niezwykłego kunsztu, a ostateczny kształt zegarka to efekt setek godzin pracy. Ich
+                wysiłek się opłacił. Czasomierze z linii The Longines Master Collection to małe dzieła sztuki.
+            </p><br>
+            <p>
+                Kopertę wykonano z szafirowego szkła, tarczę z masy perłowej, a indeksy godzinowe – z połyskujących
+                brylantów. Zegarmistrzowie marki zadbali również, by modele z linii The Longines Master Collection były
+                zarazem lekkie, wytrzymałe i odporne na uszkodzenia. Nowa edycja kolekcji pozwala również dopasować
+                zegarek do indywidualnego stylu. Czasomierze są dostępne na paskach skórzanych – w kolorze karminowej
+                czerwieni, głębokiego indygo i klasycznej szarości – lub na bransolecie. Model jest również dostępny w
+                wersji z niebieską tarczą ze słonecznym szlifem lub srebrzystą tarczą ze wzorem kłosa jęczmienia.
+            </p><br>
+            <p>
+                Zegarki z linii The Longines Master Collection to idealny pomysł na prezent. Również dla samej siebie.
+                Kolekcja jest dostępna w sklepie internetowym <a id="watch"
+                    href="https://www.longines.com/pl/zegarki/classic/watchmaking-tradition/master-collection"
+                    style="text-decoration: none; color: rgb(221, 192, 112);">Longines.pl</a>
+            </p>
+        </article>
+    </main>
+    <footer>
+        <p>©Copyright 2021 by Alicja Janeczko. All rights reversed.</p>
+    </footer>
+</body>
+
+</html>
